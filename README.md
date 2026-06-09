@@ -39,9 +39,11 @@ The algorithm successfully untangles highly inefficient random initialization ro
 | Initial State | Next State N=1 |
 | :---: | :---: |
 | <img src="vizualizations/gen_00.png" width="470"> | <img src="vizualizations/gen_01.png" width="380"> |
-| *Next State N=2* | *Next State N=5* |
+| Next State N=2 | Next State N=5 |
+| :---: | :---: |
 | <img src="vizualizations/gen_02.png" width="470"> | <img src="vizualizations/gen_05.png" width="380"> |
 | Next State N=6 | Final Result N=10 |
+| :---: | :---: |
 | <img src="vizualizations/gen_06.png" width="470"> | <img src="vizualizations/gen_10.png" width="380"> |
 | *The randomized starting sequence with heavy path overlapping.* | *The untangled, LLM-optimized routing sequence after N generations.* |
 
