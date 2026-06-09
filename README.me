@@ -9,13 +9,21 @@ By framing an LLM as the mutation operator within an evolutionary algorithm loop
 The optimization environment relies on a $(\mu + \lambda)$ elitist evolutionary strategy. 
 Let the system be defined by a complete graph $G = (V, E)$, where $V = \{v_1, v_2, \dots, v_n\}$ represents the set of $n$ spatial coordinates. The objective is to find a permutation $\pi$ of the vertices that minimizes the total Euclidean tour length $L(\pi)$:
 
-$$L(\pi) = \sum_{i=1}^{n-1} d(v_{\pi(i)}, v_{\pi(i+1)}) + d(v_{\pi(n)}, v_{\pi(1)})$$
+$$
+L(\pi) = \sum_{i=1}^{n-1} d(v_{\pi(i)}, v_{\pi(i+1)}) + d(v_{\pi(n)}, v_{\pi(1)})
+$$
 
 Instead of relying on rigid, hard-coded heuristics (like a standard 2-opt swap or nearest neighbor), the mutation operation $M_{LLM}$ is dynamically governed by the LLM. 
 At generation $t$, the LLM evaluates the spatial array state and proposes a structural sequence mutation $\pi_{t}'$. 
 
 Strict elitist selection is applied to maintain monotonic convergence:
-$$\pi_{t+1} = \begin{cases} \pi_{t}' & \text{if } L(\pi_{t}') < L(\pi_t) \\ \pi_t & \text{otherwise} \end{cases}$$
+
+$$
+\pi_{t+1} = \begin{cases} 
+\pi_{t}' & \text{if } L(\pi_{t}') < L(\pi_t) \\ 
+\pi_t & \text{otherwise} 
+\end{cases}
+$$
 
 ## 🛠️ Implementation Pipeline
 
@@ -32,6 +40,7 @@ The algorithm successfully untangles highly inefficient random initialization ro
 * **Final Result (`final_result.png`):** The untangled, LLM-optimized routing sequence after $N$ generations.
 
 ## ⚙️ How to Run
+
 1. Clone the repository and establish a virtual environment.
 2. Install dependencies: `pip install -r requirements.txt`
 3. Provide a `.env` file with `GEMINI_API_KEY=your_key`.
