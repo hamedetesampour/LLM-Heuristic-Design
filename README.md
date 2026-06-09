@@ -37,7 +37,7 @@ $$
 The algorithm successfully untangles highly inefficient random initialization routes into optimized local minima. 
 
 * **Initial State:** The randomized starting sequence with heavy path overlapping. ![Initial State](initial_state.png)
-* **Next State Result:** The untangled, LLM-optimized routing sequence after $N$ generations (steps). ![Next State](final_result.png)
+* **Next State Result ($N$=1):** The untangled, LLM-optimized routing sequence after $N$ generations (steps). ![Next State](final_result.png)
 
 ## ⚙️ How to Run
 
